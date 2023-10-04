@@ -4,14 +4,6 @@ import numpy as np
 import os
 import csv
 
-
-
-import cv2
-import mediapipe as mp
-import numpy as np
-import os
-import csv
-
 def find_closest_person_to_center(pose_landmarks, frame_width, frame_height):
     min_distance = float('inf')
     closest_person = None
@@ -178,29 +170,26 @@ def create_data(video_path):
     cap.release()
     cv2.destroyAllWindows()
 
+if __name__ == '__main__':
+    # dataset folder path
+    folder_path = 'all'
+
+    # List all videos
+    video_paths = []
+
+    for dirpath, dirnames, filenames in os.walk(folder_path):
+        for file in filenames:
+            if file.endswith('.avi') or file.endswith('.mp4'):
+                video_paths.append(os.path.join(dirpath, file))
 
 
-import os
+    from concurrent.futures import ThreadPoolExecutor
+    from tqdm import tqdm
 
-# Đường dẫn tới thư mục của bạn
-folder_path = 'all'
+    def process_video(video):
+        create_data(video)
+        return video 
 
-# List tất cả đường dẫn video
-video_paths = []
-
-for dirpath, dirnames, filenames in os.walk(folder_path):
-    for file in filenames:
-        if file.endswith('.avi') or file.endswith('.mp4'):
-            video_paths.append(os.path.join(dirpath, file))
-
-
-from concurrent.futures import ThreadPoolExecutor
-from tqdm import tqdm
-
-def process_video(video):
-    create_data(video)
-    return video  # Return video path or some other indicator for tqdm's post-processing step
-
-# Assuming video_paths contains the paths of all your videos
-with ThreadPoolExecutor(max_workers=12) as executor:
-    results = list(tqdm(executor.map(process_video, video_paths), total=len(video_paths)))
+    #multi-threading
+    with ThreadPoolExecutor(max_workers=12) as executor:
+        results = list(tqdm(executor.map(process_video, video_paths), total=len(video_paths)))
