@@ -1,0 +1,7 @@
+opencv-python
+mediapipe
+numpy
+tensorflow[and-cuda]
+scikit-learn
+opencv-python-headless
+tqdm
