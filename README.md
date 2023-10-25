@@ -91,7 +91,7 @@ The server will be coded and set in a listening mode, awaiting connection reques
         - Press the plastic tab back down.
     - **Position the Camera**: Place the camera in a suitable position or mount depending on your use-case.
 
-![Untitled](Images/Untitled.png)
+![Untitled](images/Untitled.png)
 
 1. **Software Configuration**:
     - **Enable the Camera Interface**:
