@@ -147,7 +147,7 @@ The 0.96 inch OLED display typically interfaces with the Raspberry Pi using the 
     - SCL to GPIO3 (SCL)
     - SDA to GPIO2 (SDA)
         
-        ![Untitled](Images/Untitled 1.png)
+       ![Untitled](images/Untitled_1.png)
         
 2. **Enable I2C:**
     
