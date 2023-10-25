@@ -91,7 +91,7 @@ The server will be coded and set in a listening mode, awaiting connection reques
         - Press the plastic tab back down.
     - **Position the Camera**: Place the camera in a suitable position or mount depending on your use-case.
 
-![Untitled](images\Untitled.png)
+![Untitled](Images/Untitled.png)
 
 1. **Software Configuration**:
     - **Enable the Camera Interface**:
@@ -147,7 +147,7 @@ The 0.96 inch OLED display typically interfaces with the Raspberry Pi using the 
     - SCL to GPIO3 (SCL)
     - SDA to GPIO2 (SDA)
         
-        ![Untitled](images\Untitled 1.png)
+        ![Untitled](Images/Untitled 1.png)
         
 2. **Enable I2C:**
     
